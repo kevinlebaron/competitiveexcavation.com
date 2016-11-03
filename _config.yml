@@ -1,0 +1,22 @@
+name: Competitive Excavation
+address1: 446 S MALL DR
+address2: ST GEORGE, UT 84790
+phone: (435) 691 - 4356
+email: jared@competitiveexcavation.com
+fax:
+lat:
+lng:
+mapzoom: 13
+version: 3.0.3
+permalink: pretty
+excerpt_separator: ///
+collections:
+  main-pages:
+    output: true
+  services:
+    output: true
+  projects:
+    output: true
+  
+  
+  

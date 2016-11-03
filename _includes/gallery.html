@@ -1,0 +1,11 @@
+<div class="photo-gallery">
+	<ul>
+		{% for item in page.gallery %}
+			<li>
+				<a href="{{ item.image_path }}" class="strip" style="background-image: url('{{ item.image_path }}');" data-strip-group="breakdown" data-strip-caption="{{ item.description }}">
+					<span class="arrow"></span>
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

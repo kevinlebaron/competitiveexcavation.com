@@ -1,0 +1,37 @@
+---
+layout: default
+title: Projects
+banner_path:
+permalink: /projects/
+hide-from-nav: true
+banner_path: /images/projects/project-1/image-1.jpg
+navclass: projects
+navtitle: Projects
+---
+<div class="banner half" style="background-image: url('{{ page.banner_path }}');">
+	<hgroup class="">
+		<h1 class="animate-right">{{ page.title }}</h1>
+	</hgroup>
+</div>
+
+<div class="projects">
+	<ul>
+		{% for project in site.projects %}
+			{% for item in project.gallery %}
+				{% capture imagecount %}{{ forloop.length }}{% endcapture %}
+				{% if forloop.first %}
+					{% capture primaryimage %}{{ item.image_path }}{% endcapture %}
+				{% endif %}
+			{% endfor %}
+			<li>
+				<a href="{{ project.url }}">
+					<div class="image" style="background-image: url('{{ primaryimage }}');"></div>
+					<hgroup>
+						<h4>{{ project.title }}</h4>
+						<h5><i class="fa fa-picture-o" aria-hidden="true"></i> {{ imagecount }}</h5>
+					</hgroup>
+				</a>
+			</li>	
+		{% endfor %}
+	</ul>
+</div>

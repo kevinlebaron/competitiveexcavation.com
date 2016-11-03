@@ -1,0 +1,15 @@
+{% for item in page.gallery %}
+	{% capture imagecount %}{{ forloop.length }}{% endcapture %}
+	{% if forloop.first %}
+		{% capture primaryimage %}{{ item.image_path }}{% endcapture %}
+	{% endif %}
+{% endfor %}
+<div class="banner half" style="background-image: url('{{ primaryimage }}');">
+	<hgroup class="">
+		<h1 class="animate-right">{{ page.title }}</h1>
+	</hgroup>
+	<!--<div class="scroll-cta">
+		<img src="/images/icons/mouse.png" alt="" class="animate-down"/>
+		<span class="animate-up">Scroll to see more</span>
+	</div>-->
+</div>

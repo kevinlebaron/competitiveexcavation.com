@@ -1,0 +1,22 @@
+<nav>
+	<h3>Navigation</h3>
+	<a href="/">Home</a>
+	{% for item in site.main-pages %}
+	{% if item.hide-from-nav == false %}	  
+	<a href="{{ item.url }}" {% if page.url contains item.navclass %}class="selected"{% endif %}>{{ item.navtitle }}</a>
+	{% endif %}
+	{% endfor %}
+	
+	
+	<h3>Services</h3>
+	{% assign services = site.services | sort: 'order'  %}	
+	{% for service in services %}
+	<a href="{{ service.url }}">{{ service.title }}</a>
+	{% endfor %}
+	
+	<h3>Projects</h3>
+	{% for project in site.projects %}
+	<a href="{{ project.url }}">{{ project.title }}</a>
+	{% endfor %}
+	<a href="/projects/">All Projects</a>
+</nav>

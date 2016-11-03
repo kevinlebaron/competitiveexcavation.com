@@ -1,0 +1,168 @@
+---
+layout: default
+title: Home
+banner_path: /images/banners/homebanner.jpg
+---
+<link rel="stylesheet" href="/css/flickity.css" media="screen">
+<script src="/scripts/flickity.js"></script>
+<div class="main-gallery gallery js-flickity">
+	<div class="gallery-cell" style="background-image: url('{{ page.banner_path }}');">
+			<hgroup>
+				<img src="/images/logos/logo-slant.png" alt="" class="animate-right"/>
+			</hgroup>
+	</div>
+	
+	{% for service in site.services %}
+		{% for item in service.gallery %}
+			{% capture imagecount %}{{ forloop.length }}{% endcapture %}
+			{% if forloop.first %}
+				{% capture primaryimage %}{{ item.image_path }}{% endcapture %}
+			{% endif %}
+		{% endfor %}
+		<div class="gallery-cell" style="background-image: url('{{ primaryimage }}');">
+				<hgroup>
+					<h1>{{ service.title }}</h1>
+					<br />
+					<a href="{{ service.url }}" class="button">View {{ service.title }} Gallery</a>
+				</hgroup>
+		</div>
+	{% endfor %}
+</div>
+
+<div class="projects">
+	<ul>
+		{% for project in site.projects %}
+			{% for item in project.gallery %}
+				{% capture imagecount %}{{ forloop.length }}{% endcapture %}
+				{% if forloop.first %}
+					{% capture primaryimage %}{{ item.image_path }}{% endcapture %}
+				{% endif %}
+			{% endfor %}
+			<li>
+				<a href="{{ project.url }}">
+					<div class="image" style="background-image: url('{{ primaryimage }}');"></div>
+					<hgroup>
+						<h4>{{ project.title }}</h4>
+						<h5><i class="fa fa-picture-o" aria-hidden="true"></i> {{ imagecount }}</h5>
+					</hgroup>
+				</a>
+			</li>	
+		{% endfor %}
+	</ul>
+</div>
+<!--<div class="banner" style="background-image: url('{{ page.banner_path }}');">
+	<hgroup>
+		<img src="/images/logos/logo-slant.png" alt="" class="animate-right"/>
+	</hgroup>
+	<div class="scroll-cta">
+		<img src="/images/icons/mouse.png" alt="" class="animate-down"/>
+		<span class="animate-up">Scroll to see more</span>
+	</div>
+</div>-->
+
+<!--<div>
+	<section class="testimonials">
+		<h2>Satisfied Customers</h2>
+		<ul>
+		{% for testimonial in site.testimonials %}
+			<li>
+				<img src="{{ testimonial.photo_path }}" alt="{{ testimonial.name }}" />
+				<p>
+					<i class="fa fa-quote-left"></i>
+					{{ testimonial.quote }}
+					<i class="fa fa-quote-right"></i>
+				</p>
+				<h4>{{ testimonial.name }}</h4>
+				<h5>{{ testimonial.position }}, {{ testimonial.company }}</h5>
+			</li>
+		{% endfor %}
+		</ul>
+	</section>
+</div>-->
+
+<!--<div class="alternating" style="background: #fff;">
+	<div>
+		<img src="/images/illustrations/sketch-to-design.jpg" alt=""/>
+		<hgroup class="animate-right">
+			<h2>A one stop shop</h2>
+			<p>We can take your project from start to finish.</p>
+			<ul>
+				<li>Real Estate Consulting/Brokering</li>
+				<li>Architectural Design</li>
+				<li>Civil Engineering</li>
+				<li>Land Surveying</li>
+				<li>Mechanical Engineering</li>
+				<li>Electrical Engineering</li>
+				<li>Consulting</li>
+			</ul>
+		</hgroup>
+	</div>
+	
+	<section style="background: #000 url('/images/backgrounds/plandesk.jpg');">
+		<h4>“There is such an efficiency for the project to have everything done in one place.”</h4>
+	</section>
+	
+	<div>
+		<img src="/images/illustrations/surveying.png" alt=""/>
+		<hgroup class="animate-left">
+			<h2>LAND DEVELOPMENT CONSULTING SERVICES</h2>
+			<p>We offer more than just a design service… We help real estate developers acquire land, go through the preliminary land planning, get the approvals through the city then package that up to broker and sell or develop.</p>
+			
+			<h3>We Specialize In:</h3>
+			<ul>
+				<li>Land Development</li>
+				<li>Multi family housing</li>
+				<li>Apartment projects</li>
+				<li>Small commercial projects</li>
+				<li>Mid rise office space</li>
+			</ul>
+		</hgroup>
+	</div>
+	
+	<section style="background: #000 url('/images/backgrounds/stamp.jpg');">
+		<h4>“Our job isn't done just because we’ve handed you the plans. We’ll fill out your building permit applications, we’ll meet with the city planners, we’ll go to the planning commission meetings, we’ll meet with the mayor, we’ll be with you every step of the way if you need us to.”</h4>
+	</section>
+	
+	<div>
+		<img src="/images/illustrations/drawing.png" alt=""/>
+		<hgroup class="animate-right">
+			<h2>PRELIMINARY LAND PLANNING</h2>
+			<p>Because Excel can be your realtor as well as your engineers we can mitigate a lot of up front risk by investigating your property during the due diligence period to find out what works and what doesn't before you ever put the property under contract.</p>
+			
+			<h3>Due Diligence Services:</h3>
+			<ul>
+				<li>Preliminary land planning</li>
+				<li>Density</li>
+				<li>Yield</li>
+				<li>Cost of construction</li>
+				<li>Nearest infrastructure</li>
+				<li>Utilities</li>
+				<li>Impacts</li>
+				<li>Etc</li>
+			</ul>
+		</hgroup>
+	</div>
+	
+	<section style="background: #000 url('/images/backgrounds/landplans.jpg');">
+		<h4>“It is a whole new level of services that most developers would never even get to until after they’ve taken the chance, laid out the money and purchased the property.”</h4>
+	</section>
+	
+	<div>
+		<img src="/images/illustrations/planning.png" alt=""/>
+		<hgroup class="animate-left">
+			<h2>CUSTOMER SERVICE</h2>
+			<p>We service a small number of clients to a really high level so we’ll be there to support you throughout the entire life of your project.We service your needs not only through the design but we’ll also help you work through city processes.</p>
+			<h3>City Processes</h3>
+			<ul>
+				<li>Entitlements</li>
+				<li>Applications</li>
+				<li>Procedures</li>
+				<li>Permits </li>
+			</ul>
+		</hgroup>
+	</div>
+	
+	<section style="background: #000 url('/images/backgrounds/handshake.jpg');">
+		<h4>“Often times our clients allow us to drive the design right from the get go all the way to permitting, completion, commissioning and certificate of occupancy.”</h4>
+	</section>
+</div>-->
