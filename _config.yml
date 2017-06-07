@@ -17,6 +17,15 @@ collections:
     output: true
   projects:
     output: true
+ 
+ defaults:   
+  -
+    scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: project
+      _hide_content: true
   
   
   
