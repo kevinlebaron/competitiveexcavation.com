@@ -1,5 +1,4 @@
 ---
-layout: projects
 title: project 3
 description:
 start_date:
