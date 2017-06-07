@@ -24,7 +24,7 @@ collections:
       path: ""
       type: "projects"
     values:
-      layout: project
+      layout: "projects"
       _hide_content: true
   
   
