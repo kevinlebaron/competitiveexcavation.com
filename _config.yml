@@ -18,7 +18,7 @@ collections:
   projects:
     output: true
  
- defaults:   
+defaults:   
   -
     scope:
       path: ""
